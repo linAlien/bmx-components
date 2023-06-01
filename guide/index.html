@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速开始 | bmx-components</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="表单组件使用说明">
+    
+    <link rel="preload" href="/assets/css/0.styles.ef471b81.css" as="style"><link rel="preload" href="/assets/js/app.9faa0584.js" as="script"><link rel="preload" href="/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/assets/js/9.d4030cce.js" as="script"><link rel="prefetch" href="/assets/js/10.7cd8d166.js"><link rel="prefetch" href="/assets/js/3.dc72da58.js"><link rel="prefetch" href="/assets/js/4.0dd8aefa.js"><link rel="prefetch" href="/assets/js/5.216cae74.js"><link rel="prefetch" href="/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/assets/js/7.9c9172a7.js"><link rel="prefetch" href="/assets/js/8.61351de4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ef471b81.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">bmx-components</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="active sidebar-link">快速开始</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/guide/#使用方法" class="sidebar-link">使用方法</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/formCreate/" class="sidebar-link">form-create  生成表单</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/inspectTaskForm/" class="sidebar-link">inspect-task-form 任务页面</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速开始"><a href="#快速开始" class="header-anchor">#</a> 快速开始</h1> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <h3 id="hbuilder-x方式"><a href="#hbuilder-x方式" class="header-anchor">#</a> Hbuilder X方式</h3> <p>使用<code>Hbuilder X</code>打开工程，在<code>uni-app</code>插件市场通过<code>uni_modules</code>的形式进行安装，此安装方式可以方便您后续在<code>uni_modules</code>对uView进行一键升级。</p> <h2 id="使用方法"><a href="#使用方法" class="header-anchor">#</a> 使用方法</h2> <p>引用内部修改过的uView，引用css文件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//main.js</span>
+<span class="token keyword">import</span> uView <span class="token keyword">from</span> <span class="token string">'@/uni_modules/bmx-components/uview-ui'</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>uView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//uni.scss</span>
+@<span class="token keyword">import</span> <span class="token string">&quot;@/uni_modules/bmx-components/uview-ui/theme.scss&quot;</span><span class="token punctuation">;</span>
+@<span class="token keyword">import</span> <span class="token string">&quot;@/uni_modules/bmx-components/theme.scss&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 覆盖主题色</span>
+$bmx<span class="token operator">-</span>theme<span class="token operator">:</span> #3379ff<span class="token punctuation">;</span>
+$bmx<span class="token operator">-</span>theme<span class="token operator">-</span>background<span class="token operator">:</span> #ecf1ff<span class="token punctuation">;</span>
+
+</code></pre></div><p>组件需使用vuex</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// store</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> formCreate <span class="token keyword">from</span> <span class="token string">'@/uni_modules/bmx-components/libs/store/modules/form-create.js'</span><span class="token punctuation">;</span>
+
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">modules</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    formCreate<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span>
+
+<span class="token comment">//main.js</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span><span class="token punctuation">;</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$store <span class="token operator">=</span> store<span class="token punctuation">;</span>
+
+</code></pre></div><p>组件需配置easycom规则后，自动按需引入，无需<code>import</code>组件，直接引用即可，由于业务需求插件中包含已修改过uView组件也需配置easycom规则引用。uView组件可正常使用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token string-property property">&quot;easycom&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	    <span class="token string-property property">&quot;autoscan&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+	    <span class="token string-property property">&quot;custom&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	      <span class="token string-property property">&quot;^u-(.*)&quot;</span><span class="token operator">:</span> <span class="token string">&quot;@/uni_modules/bmx-components/uview-ui/components/u-$1/u-$1.vue&quot;</span><span class="token punctuation">,</span>
+		  <span class="token string-property property">&quot;^bmx-(.*)&quot;</span><span class="token operator">:</span> <span class="token string">&quot;@/uni_modules/bmx-components/components/bmx-$1/bmx-$1.vue&quot;</span>
+	    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/formCreate/">
+        form-create  生成表单
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9faa0584.js" defer></script><script src="/assets/js/2.733019b2.js" defer></script><script src="/assets/js/9.d4030cce.js" defer></script>
+  </body>
+</html>
